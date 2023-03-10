@@ -1,0 +1,21 @@
+package DataDrivenPackage;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+
+public class KeyWordFlib {
+	public String readPropertyData(String propPath,String key) throws IOException
+	{
+		FileInputStream fis=new FileInputStream(propPath);
+		Properties prop=new Properties();
+		prop.load(fis);
+		String value=prop.getProperty(key);
+		
+		return value;
+		
+		
+	}
+
+}

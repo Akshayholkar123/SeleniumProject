@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Testchrome(failed)">
+    <parameter name="vpassword" value="manager"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="vusername" value="admin"/>
+    <classes>
+      <class name="importantJavaPrograms.RTP">
+        <methods>
+          <include name="openBrowser"/>
+        </methods>
+      </class> <!-- importantJavaPrograms.RTP -->
+    </classes>
+  </test> <!-- Testchrome(failed) -->
+  <test thread-count="5" name="Testfirefox(failed)">
+    <parameter name="vpassword" value="manager"/>
+    <parameter name="browser" value="firefox"/>
+    <parameter name="vusername" value="admin"/>
+    <classes>
+      <class name="importantJavaPrograms.RTP">
+        <methods>
+          <include name="openBrowser"/>
+        </methods>
+      </class> <!-- importantJavaPrograms.RTP -->
+    </classes>
+  </test> <!-- Testfirefox(failed) -->
+</suite> <!-- Failed suite [Suite] -->
