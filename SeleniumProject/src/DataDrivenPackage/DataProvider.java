@@ -22,6 +22,7 @@ public void setup() throws InterruptedException
 	driver.get("http://127.0.0.1/login.do;jsessionid=1l4514s15e7b2");
 Thread.sleep(2000);
 	}
+	//two dimentional array
 @org.testng.annotations.DataProvider
 public Object[][] dataProviderActitime()
 {
