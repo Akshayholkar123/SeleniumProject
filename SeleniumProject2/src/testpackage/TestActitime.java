@@ -18,8 +18,7 @@ public class TestActitime extends BaseTest{
 	{
 		LoginPage lp = new LoginPage(driver);
 		Flib flib = new Flib();
-		lp.validLoginToActiTime(flib.readPropertyData(propPath,"username"),flib.readPropertyData(propPath,"password"));
-		Thread.sleep(4000);
+		lp.validLoginToActiTime(flib.readPropertyData(propPath,"usernam"),flib.readPropertyData(propPath,"password"));
 	}
 
 }

@@ -20,7 +20,7 @@ public class CustomListner extends BaseTest implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		String failedMethodname=result.getMethod().getMethodName();
 		Reporter.log(" "+failedMethodname+"is the method which got fail",true);
-		Failed(failedMethodname);
+		failed(failedMethodname);
 	}
 	
 

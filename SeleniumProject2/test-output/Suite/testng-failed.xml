@@ -5,8 +5,8 @@
     <classes>
       <class name="testpackage.TestActitime">
         <methods>
-          <include name="testActitime"/>
-          <include name="setup"/>
+          <include name="testValidLogin"/>
+          <include name="setUp"/>
         </methods>
       </class> <!-- testpackage.TestActitime -->
     </classes>
