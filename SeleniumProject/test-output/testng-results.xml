@@ -2,33 +2,40 @@
 <testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
     <line>
-      <![CDATA[test execution is sarted]]>
+      <![CDATA[the test has been starterd]]>
     </line>
     <line>
-      <![CDATA[test execution is completed]]>
+      <![CDATA[the test is completed ]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-03-10T15:21:33 IST" name="Default suite" finished-at="2023-03-10T15:21:54 IST" duration-ms="21093">
+  <suite started-at="2023-03-11T12:06:55 IST" name="Default suite" finished-at="2023-03-11T12:06:56 IST" duration-ms="1912">
     <groups>
     </groups>
-    <test started-at="2023-03-10T15:21:33 IST" name="Default test" finished-at="2023-03-10T15:21:54 IST" duration-ms="21093">
-      <class name="pageObjectModel.TestActitimeValidLogin">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:pageObjectModel.TestActitimeValidLogin@34f5090e]" started-at="2023-03-10T15:21:33 IST" name="setUp" finished-at="2023-03-10T15:21:54 IST" duration-ms="21042" status="FAIL">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
+    <test started-at="2023-03-11T12:06:55 IST" name="Default test" finished-at="2023-03-11T12:06:56 IST" duration-ms="1912">
+      <class name="testpackage.TestActitimeValidLogin">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testpackage.TestActitimeValidLogin@34f5090e]" started-at="2023-03-11T12:06:55 IST" name="setUp" finished-at="2023-03-11T12:06:56 IST" duration-ms="1872" status="FAIL">
+          <exception class="org.openqa.selenium.remote.http.ConnectionFailedException">
             <message>
-              <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'LAPTOP-O03F5P6F', ip: '192.168.43.12']]>
+              <![CDATA[Unable to establish websocket connection to http://localhost:58566/devtools/browser/f77d9b8f-6b98-4b93-a81b-54752c6251a3
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: driver.version: ChromeDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'LAPTOP-O03F5P6F', ip: '192.168.43.12'
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:561)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:157)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:130)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:111)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:101)
-at pageObjectModel.BaseTest.setUp(BaseTest.java:36)
+              <![CDATA[org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:58566/devtools/browser/f77d9b8f-6b98-4b93-a81b-54752c6251a3
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: driver.version: ChromeDriver
+at org.openqa.selenium.remote.http.netty.NettyWebSocket.<init>(NettyWebSocket.java:102)
+at org.openqa.selenium.remote.http.netty.NettyWebSocket.lambda$create$3(NettyWebSocket.java:128)
+at org.openqa.selenium.remote.http.netty.NettyClient.openSocket(NettyClient.java:107)
+at org.openqa.selenium.devtools.Connection.<init>(Connection.java:78)
+at org.openqa.selenium.chromium.ChromiumDriver.lambda$new$2(ChromiumDriver.java:116)
+at java.base/java.util.Optional.map(Optional.java:260)
+at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:82)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:50)
+at generic.BaseTest.setUp(BaseTest.java:29)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -61,36 +68,35 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.WebDriverException: Timed out waiting for driver process to start.
-Build info: version: '4.8.1', revision: '8ebccac989'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: driver.version: FirefoxDriver
-at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:218)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:98)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-... 38 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+          </exception> <!-- org.openqa.selenium.remote.http.ConnectionFailedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testActiTime()[pri:0, instance:pageObjectModel.TestActitimeValidLogin@34f5090e]" started-at="2023-03-10T15:21:54 IST" name="testActiTime" finished-at="2023-03-10T15:21:54 IST" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
+        <test-method signature="testValidLogin()[pri:0, instance:testpackage.TestActitimeValidLogin@34f5090e]" started-at="2023-03-11T12:06:56 IST" name="testValidLogin" finished-at="2023-03-11T12:06:56 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.remote.http.ConnectionFailedException">
             <message>
-              <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'LAPTOP-O03F5P6F', ip: '192.168.43.12']]>
+              <![CDATA[Unable to establish websocket connection to http://localhost:58566/devtools/browser/f77d9b8f-6b98-4b93-a81b-54752c6251a3
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: driver.version: ChromeDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'LAPTOP-O03F5P6F', ip: '192.168.43.12'
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:561)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:157)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:130)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:111)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:101)
-at pageObjectModel.BaseTest.setUp(BaseTest.java:36)
+              <![CDATA[org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:58566/devtools/browser/f77d9b8f-6b98-4b93-a81b-54752c6251a3
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: driver.version: ChromeDriver
+at org.openqa.selenium.remote.http.netty.NettyWebSocket.<init>(NettyWebSocket.java:102)
+at org.openqa.selenium.remote.http.netty.NettyWebSocket.lambda$create$3(NettyWebSocket.java:128)
+at org.openqa.selenium.remote.http.netty.NettyClient.openSocket(NettyClient.java:107)
+at org.openqa.selenium.devtools.Connection.<init>(Connection.java:78)
+at org.openqa.selenium.chromium.ChromiumDriver.lambda$new$2(ChromiumDriver.java:116)
+at java.base/java.util.Optional.map(Optional.java:260)
+at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:82)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:50)
+at generic.BaseTest.setUp(BaseTest.java:29)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -123,28 +129,20 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.WebDriverException: Timed out waiting for driver process to start.
-Build info: version: '4.8.1', revision: '8ebccac989'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: driver.version: FirefoxDriver
-at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:218)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:98)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-... 38 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+          </exception> <!-- org.openqa.selenium.remote.http.ConnectionFailedException -->
           <reporter-output>
             <line>
-              <![CDATA[test execution is completed]]>
+              <![CDATA[the test is completed ]]>
             </line>
           </reporter-output>
-        </test-method> <!-- testActiTime -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:pageObjectModel.TestActitimeValidLogin@34f5090e]" started-at="2023-03-10T15:21:54 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1678441914755" status="SKIP">
+        </test-method> <!-- testValidLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testpackage.TestActitimeValidLogin@34f5090e]" started-at="2023-03-11T12:06:56 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1678516616980" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- pageObjectModel.TestActitimeValidLogin -->
+      </class> <!-- testpackage.TestActitimeValidLogin -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

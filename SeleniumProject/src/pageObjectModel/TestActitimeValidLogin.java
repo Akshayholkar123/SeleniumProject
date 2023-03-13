@@ -15,8 +15,8 @@ public class TestActitimeValidLogin extends BaseTest implements IAutoConstant
 			LoginPage lp = new LoginPage(driver);
 			Flib flib = new Flib();
 			
-			String validUsername = flib.readPropertyData(PROPPATH, "username3");
-			String validPassword = flib.readPropertyData(PROPPATH, "password1");
+			String validUsername = flib.readPropertyData(PROPPATH, "username");
+			String validPassword = flib.readPropertyData(PROPPATH, "password");
 			
 			lp.validLoginToActitime(validUsername, validPassword);
 			

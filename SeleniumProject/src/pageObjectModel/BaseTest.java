@@ -8,6 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -24,8 +25,11 @@ public class BaseTest implements IAutoConstant {
 		String browserValue=flib.readPropertyData(PROPPATH,"browser");
 		if (browserValue.equalsIgnoreCase("chrome"))
 		{
+			
 		System.setProperty(CHROMEKEY,CHROMEPATH);
-		 driver=new ChromeDriver();
+		ChromeOptions ops = new ChromeOptions();
+		ops.addArguments("--remote-allow-origins=*");
+		driver=new ChromeDriver(ops);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 		driver.get(url);
