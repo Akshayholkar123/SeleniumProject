@@ -9,13 +9,14 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import com.google.common.io.Files;
 
-public class BaseTest implements IAutoConstant{
+public abstract class BaseTest implements IAutoConstant{
 	protected static WebDriver driver;
 	@BeforeMethod
 	public void setUp() throws IOException
@@ -68,6 +69,11 @@ public class BaseTest implements IAutoConstant{
 		public void tearDown()
 		{
 			driver.quit();
+		}
+
+		public void onTestStart(ITestResult result) {
+			// TODO Auto-generated method stub
+			
 		}
 
 	}

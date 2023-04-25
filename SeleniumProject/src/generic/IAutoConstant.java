@@ -1,4 +1,7 @@
 package generic;
+
+import org.testng.ITestResult;
+
 public interface IAutoConstant {
 	
 	String EXCEL_PATH="./data/testdata.xlsx";

@@ -19,7 +19,7 @@ public class BaseTest implements IAutoConstant {
 	static WebDriver driver;
 	@BeforeMethod
 	
-	public  void setUp() throws IOException
+	public  void setUp() throws IOException, InterruptedException
 	{
 		Flib flib=new Flib();
 		String browserValue=flib.readPropertyData(PROPPATH,"browser");
@@ -41,6 +41,7 @@ public class BaseTest implements IAutoConstant {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 		driver.get(url);
+		Thread.sleep(4000);
 
 		
 	}
@@ -49,6 +50,7 @@ public class BaseTest implements IAutoConstant {
 	@AfterMethod
 	public void tearDown()
 	{
+		
 		driver.quit();
 	}
 	public void failed(String methodName) throws IOException

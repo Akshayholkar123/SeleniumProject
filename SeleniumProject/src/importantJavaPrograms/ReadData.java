@@ -1,4 +1,4 @@
-package importantJavaPrograms;
+ package importantJavaPrograms;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -15,22 +15,32 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ReadData {
 
-	public String readData(String excelpath,String sheetName,int rowCount,int cellCount ) throws EncryptedDocumentException, IOException {
+	//public String readData(String excelpath,String sheetName,int rowCount,int cellCount ) throws EncryptedDocumentException, IOException {
 
-		FileInputStream fis=new FileInputStream(excelpath);
+		/*FileInputStream fis=new FileInputStream(excelpath);
  Workbook wb=WorkbookFactory.create(fis);
  Sheet sh = wb.getSheet(sheetName);
  Row row=sh.getRow(rowCount);
  Cell cell=row.getCell(cellCount);
  String data=cell.getStringCellValue();
- return data;
+ return data;*/
  //System.out.println(data);
  /*Cell cell=row.createCell(4);
  cell.setCellValue("akshay holkar");
  FileOutputStream fos=new FileOutputStream("./data/testdata.xlsx");
-wb.write(fos);*/	
- 
-}
+wb.write(fos);*/
+ public String readData(String excelpath,String SheetName,int rowCount,int cellCount) throws EncryptedDocumentException, IOException
+ {
+	FileInputStream fis=new FileInputStream(excelpath);
+	Workbook wb=WorkbookFactory.create(fis);
+	Sheet sh=wb.getSheet(SheetName);
+	Row row=sh.getRow(rowCount);
+	Cell cell=row.getCell(cellCount);
+	String data=cell.getStringCellValue();
+	return data;
 	
+	
+ }
+ 	
 
 }

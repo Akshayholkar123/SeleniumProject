@@ -11,9 +11,11 @@ public class NotificationPoup {
 	public static void main(String[] args) {
 		
 		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
-		
 		ChromeOptions co = new ChromeOptions();
 		co.addArguments("--disable-notifications");
+
+		//ChromeOptions co = new ChromeOptions();
+		//co.addArguments("--disable-notifications");
 //		co.addArguments("-start-maximized");
 		WebDriver driver=new ChromeDriver(co);
 		

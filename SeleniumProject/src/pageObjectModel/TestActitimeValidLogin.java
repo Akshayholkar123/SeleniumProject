@@ -8,17 +8,18 @@ import org.testng.annotations.Test;
 public class TestActitimeValidLogin extends BaseTest implements IAutoConstant 
 		{
 	@Test
-			public void testActiTime() throws IOException {
+			public void testActiTime() throws IOException, InterruptedException {
 			BaseTest bt = new BaseTest();
 			bt.setUp();
 			
 			LoginPage lp = new LoginPage(driver);
 			Flib flib = new Flib();
 			
-			String validUsername = flib.readPropertyData(PROPPATH, "username");
-			String validPassword = flib.readPropertyData(PROPPATH, "password");
+			String validUsername = flib.readPropertyData(PROPPATH, "username1");
+			String validPassword = flib.readPropertyData(PROPPATH, "password1");
 			
 			lp.validLoginToActitime(validUsername, validPassword);
+		
 			
 		}
 
