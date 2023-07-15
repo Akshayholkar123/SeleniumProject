@@ -31,8 +31,7 @@ public class BaseTest implements IAutoConstant{
 		{
 		    ChromeOptions options = new ChromeOptions();
 
-		    options.addArguments("--disable-infobars"); // Disable the "Chrome is being controlled by automated test software" infobar
-
+		    options.addArguments("--disable-infobars"); 
 			System.setProperty(CHROME_KEY,CHROME_PATH);
 
 
@@ -78,6 +77,19 @@ public class BaseTest implements IAutoConstant{
 		public void tearDown()
 		{
 			driver.quit();
+		}
+		public void failed(String methodName)
+		{
+			TakesScreenshot ts=(TakesScreenshot)driver;
+			File src=ts.getScreenshotAs(OutputType.FILE);
+			File dest=new File(screenshotParh+methodName+".png");//String screenshotsPath=".screenshots/";
+			Files.copy(src,dest);
+		}
+		public void onTestFailure()
+		{
+			String failedMethodName=result.getMethod().getMethodName();
+			Reporter.Log(failedMethodName+" is the method which got failed",true);
+			failed(failedMethodName);
 		}
 
 	}

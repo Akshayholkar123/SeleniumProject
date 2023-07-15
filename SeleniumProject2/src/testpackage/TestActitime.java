@@ -16,9 +16,12 @@ public class TestActitime extends BaseTest{
 	@Test
 	public void testValidLogin() throws IOException, InterruptedException
 	{
-		LoginPage lp = new LoginPage(driver);
+		//LoginPage lp = new LoginPage(driver);
 		Flib flib = new Flib();
-		lp.validLoginToActiTime(flib.readPropertyData(propPath,"usernam"),flib.readPropertyData(propPath,"password"));
+		flib.writeExcelData(excelPath,"invaliddata",5, 6,"sumit");
+		
+		
+		//lp.validLoginToActiTime(flib.readPropertyData(propPath,"usernam"),flib.readPropertyData(propPath,"password"));
 	}
 
 }
