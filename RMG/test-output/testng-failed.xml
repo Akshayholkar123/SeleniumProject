@@ -3,11 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Selenium.ExcelFDataProvider">
+      <class name="TestNGTest.CreateContactTest">
         <methods>
-          <include name="dataP"/>
+          <include name="launchBrowser"/>
+          <include name="createContactWithMandatoryInfoTest"/>
+          <include name="connectToDB"/>
+          <include name="closeBrowser"/>
+          <include name="logoutFromApp"/>
+          <include name="loginToApp"/>
+          <include name="DisconnectFromDB"/>
         </methods>
-      </class> <!-- Selenium.ExcelFDataProvider -->
+      </class> <!-- TestNGTest.CreateContactTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

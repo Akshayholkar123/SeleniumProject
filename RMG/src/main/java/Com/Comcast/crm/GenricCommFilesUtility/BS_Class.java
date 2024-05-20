@@ -1,12 +1,7 @@
 package Com.Comcast.crm.GenricCommFilesUtility;
 
-import java.io.File;
-
-import java.io.IOException;
 import java.sql.SQLException;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -17,15 +12,6 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Parameters;
-
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.model.Report;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.google.common.io.Files;
-
 import Com.Comcast.Generic.DataBaseUtility.DataBaseUtilty;
 import Com.Comcast.Generic.WebDriverUtility.UtilityClassObj;
 import Com.Comcast.Generic.WebDriverUtility.WebDriverUtility;

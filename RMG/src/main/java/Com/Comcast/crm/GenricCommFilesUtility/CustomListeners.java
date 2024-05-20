@@ -1,9 +1,5 @@
 package Com.Comcast.crm.GenricCommFilesUtility;
 
-import java.io.File;
-
-import java.io.IOException;
-
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ISuite;
@@ -18,11 +14,9 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.google.common.io.Files;
-
 import Com.Comcast.Generic.WebDriverUtility.JavaUtility;
 import Com.Comcast.Generic.WebDriverUtility.UtilityClassObj;
-import Com.Comcast.Generic.WebDriverUtility.WebDriverUtility;
+
 public class CustomListeners implements ITestListener,ISuiteListener {
     public ExtentSparkReporter spark;
     public  ExtentReports report;
@@ -40,9 +34,6 @@ public static ExtentTest test;
 		 
 		report.setSystemInfo("os","windows 12");
 		report.setSystemInfo("Browser","chromium");
-		
-
-
 		
 	}
 
@@ -80,9 +71,6 @@ public static ExtentTest test;
 		
 		}
 
-		
-	
-
 	public void onTestSkipped(ITestResult result) {
 		test.log(Status.INFO,result.getMethod().getMethodName()+"  skipped ");
 
@@ -93,28 +81,14 @@ public static ExtentTest test;
 
 	}
 
-	public void onTestFailedWithTimeout(ITestResult result) {
-		test.log(Status.INFO,result.getMethod().getMethodName()+"  skipped with timeOut");
+	public void onStart(ITestContext context) {
+		// TODO Auto-generated method stub
+		
 	}
 
-	/*
-	 * public void onStart(ITestContext context) { }
-	 * 
-	 * public void onFinish(ITestContext context) { }
-	 * 
-	 * @Override public int hashCode() { // TODO Auto-generated method stub return
-	 * super.hashCode(); }
-	 *  
-	 * @Override public boolean equals(Object obj) { // TODO Auto-generated method
-	 * stub return super.equals(obj); }
-	 * 
-	 * @Override protected Object clone() throws CloneNotSupportedException { //
-	 * TODO Auto-generated method stub return super.clone(); }
-	 * 
-	 * @Override public String toString() { // TODO Auto-generated method stub
-	 * return super.toString(); }
-	 * 
-	 * @Override protected void finalize() throws Throwable { // TODO Auto-generated
-	 * method stub super.finalize(); }
-	 */
+	public void onFinish(ITestContext context) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
