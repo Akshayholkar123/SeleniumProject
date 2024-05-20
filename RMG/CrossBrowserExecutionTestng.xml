@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="tests" name="Suite">
+  <test name="Test1-firefox">
+	  <parameter name="Browser" value="firefox"></parameter>
+    <classes>
+      <class name="TestNGTest.CreateOrgTest"/>
+      <class name="TestNGTest.CreateContactTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+    <test name="Test2-chrome">
+      <parameter name="Browser" value="chrome"></parameter>
+
+    <classes>
+      <class name="TestNGTest.CreateOrgTest"/>
+      <class name="TestNGTest.CreateContactTest"/>
+    </classes>
+  </test> <!-- Test -->
+
+  
+</suite> <!-- Suite -->

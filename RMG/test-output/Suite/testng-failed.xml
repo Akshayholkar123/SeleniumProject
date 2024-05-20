@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="BatchTest(failed)">
+    <classes>
+      <class name="TestNGTest.CreateContactTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="createContactWithMandatoryInfoTest"/>
+          <include name="createContactWithOrgName"/>
+          <include name="connectToDB"/>
+          <include name="closeBrowser"/>
+          <include name="logoutFromApp"/>
+          <include name="createContactDateTest"/>
+          <include name="loginToApp"/>
+          <include name="DisconnectFromDB"/>
+        </methods>
+      </class> <!-- TestNGTest.CreateContactTest -->
+      <class name="TestNGTest.CreateOrgTest">
+        <methods>
+          <include name="createOrgNameIndustryTest"/>
+          <include name="launchBrowser"/>
+          <include name="createOrgNameTest"/>
+          <include name="createOrgNameContactTest"/>
+          <include name="connectToDB"/>
+          <include name="closeBrowser"/>
+          <include name="logoutFromApp"/>
+          <include name="loginToApp"/>
+          <include name="DisconnectFromDB"/>
+        </methods>
+      </class> <!-- TestNGTest.CreateOrgTest -->
+    </classes>
+  </test> <!-- BatchTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
