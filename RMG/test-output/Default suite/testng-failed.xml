@@ -3,17 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNGTest.CreateContactTest">
+      <class name="TestNGTest.CreateOrgTest">
         <methods>
           <include name="launchBrowser"/>
-          <include name="createContactWithMandatoryInfoTest"/>
+          <include name="createOrgNameTest"/>
           <include name="connectToDB"/>
           <include name="closeBrowser"/>
           <include name="logoutFromApp"/>
           <include name="loginToApp"/>
           <include name="DisconnectFromDB"/>
         </methods>
-      </class> <!-- TestNGTest.CreateContactTest -->
+      </class> <!-- TestNGTest.CreateOrgTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

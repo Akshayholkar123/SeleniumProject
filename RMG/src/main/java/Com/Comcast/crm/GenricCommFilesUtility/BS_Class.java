@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
@@ -29,7 +30,7 @@ public class BS_Class{
 	public static WebDriver sdriver=null;
 
     
-	@BeforeSuite(groups = { "smoke", "regression" })
+	@BeforeSuite(alwaysRun = true)
 	public void connectToDB() throws SQLException {
 		// dLib.getDBConnection();
 		System.out.println("-- connected to DB --");
@@ -37,16 +38,22 @@ public class BS_Class{
 	}
 
   // @Parameters("Browser")
-	@BeforeClass(groups = { "smoke", "regression" })
+	@BeforeClass(alwaysRun = true)
 	public void launchBrowser() throws Throwable {
         String browser =fLib.getDataFromPropertyFile("browser");
 		
     	//String browser=Browser;
+        
 		if (browser.equalsIgnoreCase("chrome")) {
-			driver = new ChromeDriver();
+			System.setProperty("webdriver.chrome.driver", "./src/test/resources/drivers/chromedriver.exe");
+			ChromeOptions ops=new ChromeOptions();
+			ops.addArguments("--remote-allow-origins=*");
+			driver = new ChromeDriver(ops);
 		
 		wLib.maximizeBrowser(driver);}
 		else if  (browser.equalsIgnoreCase("firefox")) {
+			//.setProperty("webdriver.gecko.driver", "./src/test/resources/drivers/geckodriver.exe");
+
 			driver = new FirefoxDriver();
 		}
 		else if  (browser.equalsIgnoreCase("edge")) {
@@ -58,7 +65,7 @@ public class BS_Class{
          uco.setdriver(driver);
 	}
 
-	@BeforeMethod(groups = { "smoke", "regression" })
+	@BeforeMethod(alwaysRun = true)
 	public void loginToApp() throws Throwable {
 		String URL = fLib.getDataFromPropertyFile("url");
 		String UN = fLib.getDataFromPropertyFile("usn");
@@ -67,18 +74,18 @@ public class BS_Class{
 		lp.loginToApp(driver, URL, UN, PWD);
 	}
 
-	@AfterMethod(groups = {"smoke", "regression"})
+	@AfterMethod(alwaysRun = true)
 	public void logoutFromApp() {
 		HomePage hp = new HomePage(driver);
 		hp.LogOutMethod(driver);
 	}
 
-	@AfterClass(groups = { "smoke", "regression" })
+	@AfterClass(alwaysRun = true)
 	public void closeBrowser() {
 		driver.quit();
 	}
 
-	@AfterSuite(groups = { "smoke", "regression" })
+	@AfterSuite(alwaysRun = true)
 	public void DisconnectFromDB() throws SQLException {
 		// dLib.closeDB();
 System.out.println("close db");

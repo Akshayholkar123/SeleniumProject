@@ -11,7 +11,7 @@ public class TestRunner{
 	public void testRun()
 	{
 		JavaUtility ju=new JavaUtility();
-		String date=ju.getReqDate(-30);
+		String date=ju.getReqDate(30);
 		Reporter.log(date,true);
 	}
 

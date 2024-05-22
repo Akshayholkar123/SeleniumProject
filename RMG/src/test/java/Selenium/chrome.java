@@ -16,7 +16,7 @@ import org.openqa.selenium.interactions.Actions;
 public class chrome {
 
 	public static void main(String[] args) throws FileNotFoundException, InterruptedException {
-		//System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 		ChromeOptions ops=new ChromeOptions();
 		ops.addArguments("--remote-allow-origins=*");
 		
