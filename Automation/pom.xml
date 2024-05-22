@@ -3,4 +3,11 @@
   <groupId>com.comcast.Automation</groupId>
   <artifactId>Automation</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.seleniumproject</groupId>
+  		<artifactId>seleniummavenproject</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>
