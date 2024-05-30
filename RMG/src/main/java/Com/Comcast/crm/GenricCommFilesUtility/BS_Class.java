@@ -40,8 +40,14 @@ public class BS_Class{
   // @Parameters("Browser")
 	@BeforeClass(alwaysRun = true)
 	public void launchBrowser() throws Throwable {
-        String browser =fLib.getDataFromPropertyFile("browser");
-		
+        //String browser =fLib.getDataFromPropertyFile("browser");
+  	  System.out.println("batch maven practice");
+  	  String browser=System.getProperty("browser",fLib.getDataFromPropertyFile("browser"));
+  	//  String Url=System.getProperty("url");
+  	  String Username=System.getProperty("username");
+
+  	  String Password=System.getProperty("password");
+
     	//String browser=Browser;
         
 		if (browser.equalsIgnoreCase("chrome")) {
@@ -49,7 +55,7 @@ public class BS_Class{
 			ChromeOptions ops=new ChromeOptions();
 			ops.addArguments("--remote-allow-origins=*");
 			driver = new ChromeDriver(ops);
-		
+
 		wLib.maximizeBrowser(driver);}
 		else if  (browser.equalsIgnoreCase("firefox")) {
 			//.setProperty("webdriver.gecko.driver", "./src/test/resources/drivers/geckodriver.exe");
@@ -59,19 +65,18 @@ public class BS_Class{
 		else if  (browser.equalsIgnoreCase("edge")) {
 			driver = new InternetExplorerDriver();
 		}
-		wLib.maximizeBrowser(driver);
-         sdriver=driver;
+		wLib.maximizeBrowser(driver);        sdriver=driver;
          UtilityClassObj uco=new UtilityClassObj();
          uco.setdriver(driver);
 	}
 
 	@BeforeMethod(alwaysRun = true)
 	public void loginToApp() throws Throwable {
-		String URL = fLib.getDataFromPropertyFile("url");
-		String UN = fLib.getDataFromPropertyFile("usn");
-		String PWD = fLib.getDataFromPropertyFile("pass");
+		//String URL = fLib.getDataFromPropertyFile("url");
+		//String UN = fLib.getDataFromPropertyFile("usn");
+		//String PWD = fLib.getDataFromPropertyFile("pass");
 		LoginPage lp = new LoginPage(driver);
-		lp.loginToApp(driver, URL, UN, PWD);
+		lp.loginToApp(driver, System.getProperty("url"), fLib.getDataFromPropertyFile("usn"),fLib.getDataFromPropertyFile("pass"));
 	}
 
 	@AfterMethod(alwaysRun = true)

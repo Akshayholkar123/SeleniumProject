@@ -2,6 +2,7 @@ package Com.Comcast.crm.GenricCommFilesUtility;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.devtools.v108.css.CSS.GetMatchedStylesForNodeResponse;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestContext;
@@ -65,7 +66,7 @@ public static ExtentTest test;
 		JavaUtility ju=new JavaUtility();	
 		String time=ju.getTimeTamp();
 		test.addScreenCaptureFromBase64String(filePath,failedMtdname+" "+time);
-
+        test.log(Status.FAIL," failed Exception   "+result.getThrowable());
 		//File dest=new File("./screenshots/"+failedMtdname+"+"+ju.getTime()+".png");
 		
 		

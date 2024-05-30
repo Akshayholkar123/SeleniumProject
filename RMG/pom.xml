@@ -3,30 +3,134 @@
 	<groupId>com.seleniumproject</groupId>
 	<artifactId>seleniummavenproject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<profiles>
+		<profile>
+			<id>GE</id>
+			<build>
+						<plugins>
+							<plugin>
+
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-surefire-plugin</artifactId>
+		<version>2.19.1</version>
+			<configuration>
+				<suiteXmlFiles>
+				<!-- TestNG suite XML files -->
+					<suiteXmlFile>testngGroupExecution.xml</suiteXmlFile>
+				</suiteXmlFiles>
+			</configuration>
+			</plugin>			
+	</plugins>			
+			</build>
+		</profile>
+			<profile>
+			<id>BE</id>
+			<build>
+						<plugins>
+							<plugin>
+
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-surefire-plugin</artifactId>
+		<version>2.19.1</version>
+			<configuration>
+				<suiteXmlFiles>
+				<!-- TestNG suite XML files -->
+					<suiteXmlFile>testngBatchExecution.xml</suiteXmlFile>
+				</suiteXmlFiles>
+			</configuration>
+			</plugin>			
+	</plugins>			
+			</build>
+		</profile>
+		
+		
+				<profile>
+			<id>DPE</id>
+			<build>
+						<plugins>
+							<plugin>
+
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-surefire-plugin</artifactId>
+		<version>2.19.1</version>
+			<configuration>
+				<suiteXmlFiles>
+				<!-- TestNG suite XML files -->
+					<suiteXmlFile>DistributedParallelExecutionTestng.xml</suiteXmlFile>
+				</suiteXmlFiles>
+			</configuration>
+			</plugin>			
+	</plugins>			
+			</build>
+		</profile>
+
+					<profile>
+			<id>CBE</id>
+			<build>
+						<plugins>
+							<plugin>
+
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-surefire-plugin</artifactId>
+		<version>2.19.1</version>
+			<configuration>
+				<suiteXmlFiles>
+				<!-- TestNG suite XML files -->
+					<suiteXmlFile>CrossBrowserExecutionTestng.xml</suiteXmlFile>
+				</suiteXmlFiles>
+			</configuration>
+			</plugin>
+							<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-compiler-plugin</artifactId>
+		<version>3.5.1</version>
+			<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+			</configuration>
+	</plugin>
+			
+	</plugins>
+				
+			</build>
+		</profile>
+
+		
+		
+	
+		
+		
+		
+		
+	</profiles>
+	<properties>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+	</properties>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.15.0</version>
+			<version>4.13.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
-			<version>4.1.2</version>
+			<version>5.2.3</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>4.1.2</version>
+			<version>5.2.3</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>6.14.3</version>
+			<version>7.7.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
 		<dependency>
@@ -46,5 +150,20 @@
 			<artifactId>extentreports</artifactId>
 			<version>5.0.9</version>
 		</dependency>
+		<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.24</version>
+    <scope>provided</scope>
+</dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v108</artifactId>
+            <version>4.8.0</version> <!-- Update this to the version you are using -->
+        </dependency>
+
 	</dependencies>
+	<build>
+
+	</build>
 </project>

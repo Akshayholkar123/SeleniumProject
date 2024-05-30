@@ -10,7 +10,7 @@ public class UtilityClassObj {
 	public static	ThreadLocal<WebDriver> driver=new ThreadLocal<WebDriver>();
 
 public static ExtentTest getTest()
-{
+{ 
 	return test.get();
 
 	}

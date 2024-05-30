@@ -3,6 +3,7 @@ package Com.Comcast.crm.ObjectUtility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -13,8 +14,11 @@ public class OrganizationPage {
 
 		PageFactory.initElements(driver, this);
 	}
+	@FindAll({
+	    @FindBy(xpath = "//img[@alt='Create Organization...']"),
+	    @FindBy(xpath = "//img[@src='themes/softed/images/btnL3Add.gif']")
+	})
 
-	@FindBy(xpath = "//img[@alt='Create Organization...']")
 	private WebElement createOrg;
 	
 	//driver.findElement(By.xpath("//a[text()='"+orgName+"']/../../td[8]/a[text()='del']")).click();
