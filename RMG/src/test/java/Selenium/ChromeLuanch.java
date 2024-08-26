@@ -3,6 +3,7 @@ package Selenium;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
@@ -15,6 +16,9 @@ public class ChromeLuanch {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 driver.get("https://www.amazon.in");
+String iphone15="iphone15";
+WebElement activeElement = driver.switchTo().activeElement();
+activeElement.sendKeys(iphone15);
 	}
 
 }

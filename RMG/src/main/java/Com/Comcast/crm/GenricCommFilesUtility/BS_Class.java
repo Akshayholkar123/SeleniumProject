@@ -1,7 +1,5 @@
 package Com.Comcast.crm.GenricCommFilesUtility;
-
 import java.sql.SQLException;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,9 +16,10 @@ import Com.Comcast.Generic.WebDriverUtility.UtilityClassObj;
 import Com.Comcast.Generic.WebDriverUtility.WebDriverUtility;
 import Com.Comcast.crm.ObjectUtility.HomePage;
 import Com.Comcast.crm.ObjectUtility.LoginPage;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BS_Class{
-//original
+	//original
 	FileUtility fLib = new FileUtility();
 	ExcelUtility eLib = new ExcelUtility();
 	WebDriverUtility wLib = new WebDriverUtility();
@@ -29,7 +28,7 @@ public class BS_Class{
 	public static WebDriver driver=null;
 	public static WebDriver sdriver=null;
 
-    
+
 	@BeforeSuite(alwaysRun = true)
 	public void connectToDB() throws SQLException {
 		// dLib.getDBConnection();
@@ -37,26 +36,29 @@ public class BS_Class{
 
 	}
 
-  // @Parameters("Browser")
+	// @Parameters("Browser")
 	@BeforeClass(alwaysRun = true)
 	public void launchBrowser() throws Throwable {
-        //String browser =fLib.getDataFromPropertyFile("browser");
-  	  System.out.println("batch maven practice");
-  	  String browser=System.getProperty("browser",fLib.getDataFromPropertyFile("browser"));
-  	//  String Url=System.getProperty("url");
-  	  String Username=System.getProperty("username");
+		String browser =fLib.getDataFromPropertyFile("browser");
+		System.out.println("batch maven practice");
+		//String browser=System.getProperty("browser",fLib.getDataFromPropertyFile("browser"));
+		// String Url=System.getProperty("url");
+		String url=fLib.getDataFromPropertyFile("browser");
+		//String Username=System.getProperty("username");
 
-  	  String Password=System.getProperty("password");
+		//String Password=System.getProperty("password");
 
-    	//String browser=Browser;
-        
+		//String browser=Browser;
+
 		if (browser.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "./src/test/resources/drivers/chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "./src/test/resources/drivers/chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
+
 			ChromeOptions ops=new ChromeOptions();
 			ops.addArguments("--remote-allow-origins=*");
 			driver = new ChromeDriver(ops);
 
-		wLib.maximizeBrowser(driver);}
+			wLib.maximizeBrowser(driver);}
 		else if  (browser.equalsIgnoreCase("firefox")) {
 			//.setProperty("webdriver.gecko.driver", "./src/test/resources/drivers/geckodriver.exe");
 
@@ -66,17 +68,22 @@ public class BS_Class{
 			driver = new InternetExplorerDriver();
 		}
 		wLib.maximizeBrowser(driver);        sdriver=driver;
-         UtilityClassObj uco=new UtilityClassObj();
-         uco.setdriver(driver);
+		UtilityClassObj uco=new UtilityClassObj();
+		uco.setdriver(driver);
 	}
 
 	@BeforeMethod(alwaysRun = true)
 	public void loginToApp() throws Throwable {
-		//String URL = fLib.getDataFromPropertyFile("url");
+		String u="http://localhost:8888";
+		String URL = fLib.getDataFromPropertyFile("url");
 		//String UN = fLib.getDataFromPropertyFile("usn");
 		//String PWD = fLib.getDataFromPropertyFile("pass");
 		LoginPage lp = new LoginPage(driver);
-		lp.loginToApp(driver, System.getProperty("url"), fLib.getDataFromPropertyFile("usn"),fLib.getDataFromPropertyFile("pass"));
+//		lp.loginToApp(driver, System.getProperty("url"), fLib.getDataFromPropertyFile("usn"),fLib.getDataFromPropertyFile("pass"));
+		lp.loginToApp(driver,u, fLib.getDataFromPropertyFile("usn"),fLib.getDataFromPropertyFile("pass"));
+
+		//lp.loginToApp(driver,URL, fLib.getDataFromPropertyFile("usn"),fLib.getDataFromPropertyFile("pass"));
+
 	}
 
 	@AfterMethod(alwaysRun = true)
@@ -93,7 +100,7 @@ public class BS_Class{
 	@AfterSuite(alwaysRun = true)
 	public void DisconnectFromDB() throws SQLException {
 		// dLib.closeDB();
-System.out.println("close db");
+		System.out.println("close db");
 	}
 
 

@@ -1,4 +1,4 @@
-package Com.Comcast.Generic.WebDriverUtility;
+ package Com.Comcast.Generic.WebDriverUtility;
 
 import java.time.Duration;
 import java.util.Iterator;
@@ -71,8 +71,9 @@ public class WebDriverUtility {
 	public void switchToAlertToDismiss(WebDriver driver) {
 		driver.switchTo().alert().dismiss();
 	}
-	public Object handledDD(WebElement element) {
+	public Object handledDD(WebElement element,String value) {
 		Select sel=new Select(element);
+		//sel.deselectByValue(value);
 		
 	return sel;
 	}

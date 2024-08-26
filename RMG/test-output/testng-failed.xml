@@ -3,17 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNGTest.CreateOrgTest">
+      <class name="SeleniumGrid">
         <methods>
-          <include name="launchBrowser"/>
-          <include name="createOrgNameTest"/>
-          <include name="connectToDB"/>
-          <include name="closeBrowser"/>
-          <include name="logoutFromApp"/>
-          <include name="loginToApp"/>
-          <include name="DisconnectFromDB"/>
+          <include name="testGrid"/>
         </methods>
-      </class> <!-- TestNGTest.CreateOrgTest -->
+      </class> <!-- SeleniumGrid -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

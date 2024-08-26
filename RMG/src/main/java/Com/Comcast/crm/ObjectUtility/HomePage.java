@@ -16,10 +16,10 @@ public class HomePage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[@href=\"index.php?module=Accounts&action=index\"]")
+	@FindBy(xpath = "//a[@href='index.php?module=Accounts&action=index']")
 	private WebElement organization;
 
-	@FindBy(xpath = "//a[@href=\"index.php?module=Contacts&action=index\"]")
+	@FindBy(xpath = "//a[@href='index.php?module=Contacts&action=index']")
 	private WebElement contact;
 
 	@FindBy(linkText = "More")

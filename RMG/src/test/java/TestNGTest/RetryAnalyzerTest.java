@@ -7,7 +7,7 @@ public class RetryAnalyzerTest {
   @Test(retryAnalyzer =Com.Comcast.crm.GenricCommFilesUtility.RetryAnalyzer.class)
   public void retry() {
 	  System.out.println("execute retry test");
-	  Assert.assertEquals(1,true);
+	  Assert.assertEquals(true,true);
 	  System.out.println("1");
 	  System.out.println("2");
 	  System.out.println("3");

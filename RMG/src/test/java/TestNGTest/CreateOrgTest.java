@@ -20,6 +20,7 @@ import Com.Comcast.crm.ObjectUtility.OrganizationPage;
 public class CreateOrgTest extends BS_Class {
 
 	@Test(groups = "smoke")
+	
 	public void createOrgNameTest() throws EncryptedDocumentException, IOException, Throwable {
 
 		UtilityClassObj.getTest().log(Status.INFO, "login to app");

@@ -72,7 +72,7 @@ public class CcreateContact {
         driver.findElement(By.id("mouseArea_Organization Name")).sendKeys("NASA");
 
         driver.findElement(By.xpath("(//img[@src='themes/softed/images/select.gif'])[1]")).click();
-        driver.findElement(By.xpath("//tr[@class=\"lvtColData\"]")).click();
+        driver.findElement(By.xpath("//tr[@class='slvtColData']")).click();
       
         
        driver.findElement(By.xpath("//input[@class='crmButton small save']")).click();

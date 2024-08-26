@@ -18,7 +18,9 @@ public class ExcelUtility {
 @SuppressWarnings("deprecation")
 public String getDataFromExcel(String sheetName,int rowCount,int cellCount) throws EncryptedDocumentException, IOException,FileNotFoundException
 {
-	FileInputStream fis=new FileInputStream("./src/test/resources/DataRMG/dataforRMG.xlsx");
+	//FileInputStream fis=new FileInputStream("./src/test/resources/DataRMG/dataforRMG.xlsx");
+	FileInputStream fis=new FileInputStream("/RMG/src/test/resources/DataRMG/ApiData.xlsx");
+
 	Workbook wb=WorkbookFactory.create(fis);
 	Sheet sh=wb.getSheet(sheetName);
 	Row row=sh.getRow(rowCount);

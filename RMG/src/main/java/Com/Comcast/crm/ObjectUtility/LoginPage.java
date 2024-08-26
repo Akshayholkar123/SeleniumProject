@@ -19,7 +19,7 @@ public class LoginPage {
 	
 	public LoginPage(WebDriver driver) {
 
-		PageFactory.initElements(driver,this);
+		PageFactory.initElements(driver,this);//pagefactory is implementation for pom
 	}
 
 	public WebElement getUsername() {

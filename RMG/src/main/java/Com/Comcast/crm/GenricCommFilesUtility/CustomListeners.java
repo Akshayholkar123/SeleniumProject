@@ -80,16 +80,14 @@ public static ExtentTest test;
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 		test.log(Status.INFO,result.getMethod().getMethodName()+"  TestFailedButWithinSuccessPercentage ");
 
-	}
+	}}
 
-	public void onStart(ITestContext context) {
-		// TODO Auto-generated method stub
+//	public void onStart(ITestContext context) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	public void onFinish(ITestContext context) {
+//		// TODO Auto-generated method stub
 		
-	}
-
-	public void onFinish(ITestContext context) {
-		// TODO Auto-generated method stub
-		
-	}
-
-}
+	
